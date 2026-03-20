@@ -1,0 +1,28 @@
+algorithms:
+  isolation_forest:
+    contamination: 0.06983385589190282
+    max_samples: auto
+    n_estimators: 200
+    n_jobs: -1
+    random_state: 42
+  lof:
+    contamination: 0.08632941149804275
+    metric: euclidean
+    n_jobs: -1
+    n_neighbors: 17
+    novelty: true
+  ocsvm:
+    gamma: 0.01
+    kernel: rbf
+    nu: 0.015930522616241012
+ensemble:
+  specialization:
+    enabled: false
+  threshold_critical: 0.75
+  threshold_high: 0.6
+  threshold_low: 0.11
+  threshold_medium: 0.35
+  weights:
+    isolation_forest: 0.29999999999999993
+    lof: 0.1
+    ocsvm: 0.6000000000000001

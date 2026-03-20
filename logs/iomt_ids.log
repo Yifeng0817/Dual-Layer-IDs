@@ -1,0 +1,942 @@
+2026-01-27 16:53:00,783 - __main__ - INFO - 
+================================================================================
+2026-01-27 16:53:00,783 - __main__ - INFO - STARTING TRAINING PHASE
+2026-01-27 16:53:00,783 - __main__ - INFO - ================================================================================
+
+2026-01-27 16:53:00,783 - __main__ - INFO - Loading dataset from data\processed\CICIoMT2024_combined.csv...
+2026-01-27 16:53:00,882 - __main__ - INFO - STEP 1: Feature Extraction (RO1)
+2026-01-27 16:53:00,882 - preprocessing.feature_extractor - INFO - Extracting features from 10000 flows...
+2026-01-27 17:09:01,466 - __main__ - INFO - 
+================================================================================
+2026-01-27 17:09:01,466 - __main__ - INFO - STARTING TRAINING PHASE
+2026-01-27 17:09:01,466 - __main__ - INFO - ================================================================================
+
+2026-01-27 17:09:01,466 - __main__ - INFO - Loading dataset from data\processed\CICIoMT2024_combined.csv...
+2026-01-27 17:09:01,513 - __main__ - INFO - STEP 1: Feature Extraction (RO1)
+2026-01-27 17:09:01,513 - preprocessing.feature_extractor - INFO - Extracting features from 10000 flows...
+2026-01-27 17:38:29,645 - database.db_connector - INFO - [OK] PostgreSQL connected successfully
+2026-01-27 17:38:29,654 - database.db_connector - INFO - [OK] Redis connected successfully
+2026-01-27 17:38:29,654 - __main__ - INFO - 
+================================================================================
+2026-01-27 17:38:29,654 - __main__ - INFO - STARTING TRAINING PHASE
+2026-01-27 17:38:29,654 - __main__ - INFO - ================================================================================
+
+2026-01-27 17:38:29,654 - __main__ - INFO - Loading dataset from data/processed/CICIoMT2024_combined.csv...
+2026-01-27 17:38:29,690 - __main__ - INFO - [OK] Loaded 10000 flows
+
+2026-01-27 17:38:29,690 - __main__ - INFO - STEP 1: Feature Extraction (RO1)
+2026-01-27 17:38:29,690 - preprocessing.feature_extractor - INFO - Extracting features from 10000 flows...
+2026-01-27 23:25:38,334 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-27 23:25:38,396 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-27 23:25:38,396 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-27 23:25:38,396 - __main__ - INFO - 
+================================================================================
+2026-01-27 23:25:38,396 - __main__ - INFO - STARTING TRAINING PHASE
+2026-01-27 23:25:38,396 - __main__ - INFO - ================================================================================
+
+2026-01-27 23:25:38,396 - __main__ - INFO - [STEP 1] Loading dataset from data/processed/CICIoMT2024_processed.csv...
+2026-01-27 23:25:38,459 - __main__ - INFO -          Loaded 10,000 flows
+2026-01-27 23:25:38,491 - __main__ - INFO -          Columns: 42
+2026-01-27 23:25:38,491 - __main__ - INFO - 
+2026-01-27 23:25:38,507 - __main__ - INFO - [STEP 2] Feature Extraction (Research Objective 1)
+2026-01-27 23:25:38,509 - preprocessing.feature_extractor - INFO - Extracting features from 10000 flows...
+2026-01-27 23:25:38,509 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-27 23:25:38,586 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-27 23:25:38,586 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-27 23:25:38,981 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-27 23:25:38,981 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-27 23:25:38,981 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-27 23:25:38,981 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-27 23:25:38,981 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-27 23:25:38,981 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-27 23:25:38,996 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-27 23:25:38,996 - __main__ - INFO -          Extracted 59 features
+2026-01-27 23:25:39,052 - preprocessing.feature_extractor - INFO - [OK] Features normalized (training mode - fitted new scaler)
+2026-01-27 23:25:39,052 - __main__ - INFO -          Features normalized using StandardScaler
+2026-01-27 23:25:39,052 - __main__ - INFO - 
+2026-01-27 23:25:39,052 - __main__ - INFO - [STEP 3] Device Identification & Mapping (Research Objective 1)
+2026-01-27 23:25:39,052 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-27 23:25:39,127 - database.db_connector - ERROR - Database error: can't adapt type 'Series'
+2026-01-27 23:25:39,127 - __main__ - ERROR - 
+[ERROR] Pipeline failed: can't adapt type 'Series'
+2026-01-27 23:28:27,760 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-27 23:28:27,760 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-27 23:28:27,776 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-27 23:28:27,776 - __main__ - INFO - 
+================================================================================
+2026-01-27 23:28:27,776 - __main__ - INFO - STARTING TRAINING PHASE
+2026-01-27 23:28:27,776 - __main__ - INFO - ================================================================================
+
+2026-01-27 23:28:27,776 - __main__ - INFO - [STEP 1] Loading dataset from data/processed/CICIoMT2024_processed.csv...
+2026-01-27 23:28:27,840 - __main__ - INFO -          Loaded 10,000 flows
+2026-01-27 23:28:27,840 - __main__ - INFO -          Columns: 42
+2026-01-27 23:28:27,840 - __main__ - INFO - 
+2026-01-27 23:28:27,840 - __main__ - INFO - [STEP 2] Feature Extraction (Research Objective 1)
+2026-01-27 23:28:27,840 - preprocessing.feature_extractor - INFO - Extracting features from 10000 flows...
+2026-01-27 23:28:27,840 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-27 23:28:27,903 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-27 23:28:27,903 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-27 23:28:28,271 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-27 23:28:28,271 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-27 23:28:28,271 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-27 23:28:28,271 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-27 23:28:28,271 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-27 23:28:28,273 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-27 23:28:28,273 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-27 23:28:28,273 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-27 23:28:28,273 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-27 23:28:28,273 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-27 23:28:28,273 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-27 23:28:28,273 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-27 23:28:28,275 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-27 23:28:28,275 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-27 23:28:28,275 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-27 23:28:28,275 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-27 23:28:28,275 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-27 23:28:28,275 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-27 23:28:28,276 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-27 23:28:28,276 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-27 23:28:28,276 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-27 23:28:28,276 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-27 23:28:28,276 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-27 23:28:28,276 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-27 23:28:28,276 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-27 23:28:28,278 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-27 23:28:28,278 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-27 23:28:28,278 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-27 23:28:28,278 - __main__ - INFO -          Extracted 59 features
+2026-01-27 23:28:28,301 - preprocessing.feature_extractor - INFO - [OK] Features normalized (training mode - fitted new scaler)
+2026-01-27 23:28:28,301 - __main__ - INFO -          Features normalized using StandardScaler
+2026-01-27 23:28:28,301 - __main__ - INFO - 
+2026-01-27 23:28:28,301 - __main__ - INFO - [STEP 3] Device Identification & Mapping (Research Objective 1)
+2026-01-27 23:28:28,301 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-27 23:28:30,013 - detection.device_profiler - INFO - [OK] Identified 254 unique devices (254 newly registered)
+2026-01-27 23:28:30,013 - __main__ - INFO -          Identified 254 unique devices
+2026-01-27 23:28:30,013 - __main__ - INFO - 
+2026-01-27 23:28:30,013 - __main__ - INFO - [STEP 4] Separating Normal Traffic for Baseline
+2026-01-27 23:28:30,013 - __main__ - ERROR - 
+[ERROR] Pipeline failed: Can only use .str accessor with string values!
+2026-01-27 23:29:54,189 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-27 23:29:54,199 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-27 23:29:54,199 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-27 23:29:54,199 - __main__ - INFO - 
+================================================================================
+2026-01-27 23:29:54,199 - __main__ - INFO - STARTING TRAINING PHASE
+2026-01-27 23:29:54,199 - __main__ - INFO - ================================================================================
+
+2026-01-27 23:29:54,199 - __main__ - INFO - [STEP 1] Loading dataset from data/processed/CICIoMT2024_processed.csv...
+2026-01-27 23:29:54,246 - __main__ - INFO -          Loaded 10,000 flows
+2026-01-27 23:29:54,246 - __main__ - INFO -          Columns: 42
+2026-01-27 23:29:54,246 - __main__ - INFO - 
+2026-01-27 23:29:54,246 - __main__ - INFO - [STEP 2] Feature Extraction (Research Objective 1)
+2026-01-27 23:29:54,246 - preprocessing.feature_extractor - INFO - Extracting features from 10000 flows...
+2026-01-27 23:29:54,262 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-27 23:29:54,314 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-27 23:29:54,314 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-27 23:29:54,733 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-27 23:29:54,739 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-27 23:29:54,743 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-27 23:29:54,744 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-27 23:29:54,744 - __main__ - INFO -          Extracted 59 features
+2026-01-27 23:29:54,789 - preprocessing.feature_extractor - INFO - [OK] Features normalized (training mode - fitted new scaler)
+2026-01-27 23:29:54,789 - __main__ - INFO -          Features normalized using StandardScaler
+2026-01-27 23:29:54,789 - __main__ - INFO - 
+2026-01-27 23:29:54,789 - __main__ - INFO - [STEP 3] Device Identification & Mapping (Research Objective 1)
+2026-01-27 23:29:54,789 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-27 23:29:54,835 - __main__ - ERROR - 
+[ERROR] Pipeline failed: 'device_id'
+2026-01-27 23:32:29,537 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-27 23:32:29,553 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-27 23:32:29,553 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-27 23:32:29,553 - __main__ - INFO - 
+================================================================================
+2026-01-27 23:32:29,553 - __main__ - INFO - STARTING TRAINING PHASE
+2026-01-27 23:32:29,553 - __main__ - INFO - ================================================================================
+
+2026-01-27 23:32:29,553 - __main__ - INFO - [STEP 1] Loading dataset from data/processed/CICIoMT2024_processed.csv...
+2026-01-27 23:32:29,665 - __main__ - INFO -          Loaded 10,000 flows
+2026-01-27 23:32:29,665 - __main__ - INFO -          Columns: 42
+2026-01-27 23:32:29,665 - __main__ - INFO - 
+2026-01-27 23:32:29,665 - __main__ - INFO - [STEP 2] Feature Extraction (Research Objective 1)
+2026-01-27 23:32:29,665 - preprocessing.feature_extractor - INFO - Extracting features from 10000 flows...
+2026-01-27 23:32:29,665 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-27 23:32:29,744 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-27 23:32:29,744 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-27 23:32:30,093 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-27 23:32:30,108 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-27 23:32:30,108 - __main__ - INFO -          Extracted 59 features
+2026-01-27 23:32:30,140 - preprocessing.feature_extractor - INFO - [OK] Features normalized (training mode - fitted new scaler)
+2026-01-27 23:32:30,140 - __main__ - INFO -          Features normalized using StandardScaler
+2026-01-27 23:32:30,140 - __main__ - INFO - 
+2026-01-27 23:32:30,140 - __main__ - INFO - [STEP 3] Device Identification & Mapping (Research Objective 1)
+2026-01-27 23:32:30,140 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-27 23:32:31,391 - detection.device_profiler - INFO - [OK] Identified 254 unique devices (254 newly registered)
+2026-01-27 23:32:31,391 - __main__ - INFO -          Identified 254 unique devices
+2026-01-27 23:32:31,391 - __main__ - INFO - 
+2026-01-27 23:32:31,391 - __main__ - INFO - [STEP 4] Separating Normal Traffic for Baseline
+2026-01-27 23:32:31,407 - __main__ - INFO -          Found 0 benign flows (0.0%)
+2026-01-27 23:32:31,407 - __main__ - INFO - 
+2026-01-27 23:32:31,407 - __main__ - INFO - [STEP 5] Building Device Behavioral Baselines (Research Objective 2)
+2026-01-27 23:32:31,407 - __main__ - INFO -          Creating statistical profiles with z-score normalization
+2026-01-27 23:32:31,407 - detection.device_profiler - INFO - Building baselines for all devices...
+2026-01-27 23:32:31,456 - detection.device_profiler - INFO - [OK] Baselines built for 0 devices
+2026-01-27 23:32:31,456 - __main__ - INFO - 
+2026-01-27 23:32:31,456 - __main__ - INFO - [STEP 6] Training Unsupervised Ensemble (Research Objective 3)
+2026-01-27 23:32:31,456 - __main__ - INFO -          Training 5 algorithms concurrently:
+2026-01-27 23:32:31,456 - __main__ - INFO -          - Isolation Forest
+2026-01-27 23:32:31,456 - __main__ - INFO -          - Local Outlier Factor (LOF)
+2026-01-27 23:32:31,456 - __main__ - INFO -          - K-Means Clustering
+2026-01-27 23:32:31,456 - __main__ - INFO -          - DBSCAN
+2026-01-27 23:32:31,456 - __main__ - INFO -          - One-Class SVM
+2026-01-27 23:32:31,456 - __main__ - INFO - 
+2026-01-27 23:32:31,456 - __main__ - INFO - ============================================================
+2026-01-27 23:32:31,456 - __main__ - INFO - TRAINING UNSUPERVISED ENSEMBLE (5 ALGORITHMS)
+2026-01-27 23:32:31,456 - __main__ - INFO - ============================================================
+2026-01-27 23:32:31,456 - __main__ - INFO - [1/5] Training Isolation Forest...
+2026-01-27 23:32:31,456 - __main__ - ERROR - 
+[ERROR] Pipeline failed: Found array with 0 sample(s) (shape=(0, 59)) while a minimum of 1 is required by IsolationForest.
+2026-01-27 23:34:06,893 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-27 23:34:06,909 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-27 23:34:06,909 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-27 23:34:06,912 - __main__ - INFO - 
+================================================================================
+2026-01-27 23:34:06,912 - __main__ - INFO - STARTING TRAINING PHASE
+2026-01-27 23:34:06,912 - __main__ - INFO - ================================================================================
+
+2026-01-27 23:34:06,914 - __main__ - INFO - [STEP 1] Loading dataset from data/processed/CICIoMT2024_processed.csv...
+2026-01-27 23:34:06,972 - __main__ - INFO -          Loaded 10,000 flows
+2026-01-27 23:34:06,972 - __main__ - INFO -          Columns: 42
+2026-01-27 23:34:06,972 - __main__ - INFO - 
+2026-01-27 23:34:06,972 - __main__ - INFO - [STEP 2] Feature Extraction (Research Objective 1)
+2026-01-27 23:34:06,972 - preprocessing.feature_extractor - INFO - Extracting features from 10000 flows...
+2026-01-27 23:34:06,972 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-27 23:34:07,046 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-27 23:34:07,048 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-27 23:34:07,399 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-27 23:34:07,411 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-27 23:34:07,412 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-27 23:34:07,412 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-27 23:34:07,412 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-27 23:34:07,412 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-27 23:34:07,413 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-27 23:34:07,413 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-27 23:34:07,413 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-27 23:34:07,413 - __main__ - INFO -          Extracted 59 features
+2026-01-27 23:34:07,447 - preprocessing.feature_extractor - INFO - [OK] Features normalized (training mode - fitted new scaler)
+2026-01-27 23:34:07,447 - __main__ - INFO -          Features normalized using StandardScaler
+2026-01-27 23:34:07,447 - __main__ - INFO - 
+2026-01-27 23:34:07,447 - __main__ - INFO - [STEP 3] Device Identification & Mapping (Research Objective 1)
+2026-01-27 23:34:07,447 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-27 23:34:08,793 - detection.device_profiler - INFO - [OK] Identified 254 unique devices (254 newly registered)
+2026-01-27 23:34:08,793 - __main__ - INFO -          Identified 254 unique devices
+2026-01-27 23:34:08,793 - __main__ - INFO - 
+2026-01-27 23:34:08,793 - __main__ - INFO - [STEP 4] Separating Normal Traffic for Baseline
+2026-01-27 23:34:08,809 - __main__ - INFO -          Found labels: ['12.0' '14.0' '16.0' '11.0' '15.0' '0.0' '13.0' '17.0']
+2026-01-27 23:34:08,817 - __main__ - INFO -          Found 344 benign flows (3.4%)
+2026-01-27 23:34:08,817 - __main__ - INFO - 
+2026-01-27 23:34:08,817 - __main__ - INFO - [STEP 5] Building Device Behavioral Baselines (Research Objective 2)
+2026-01-27 23:34:08,817 - __main__ - INFO -          Creating statistical profiles with z-score normalization
+2026-01-27 23:34:08,817 - detection.device_profiler - INFO - Building baselines for all devices...
+2026-01-27 23:34:08,905 - detection.device_profiler - INFO - [OK] Baselines built for 0 devices
+2026-01-27 23:34:08,905 - __main__ - INFO - 
+2026-01-27 23:34:08,905 - __main__ - INFO - [STEP 6] Training Unsupervised Ensemble (Research Objective 3)
+2026-01-27 23:34:08,905 - __main__ - INFO -          Training 5 algorithms concurrently:
+2026-01-27 23:34:08,905 - __main__ - INFO -          - Isolation Forest
+2026-01-27 23:34:08,905 - __main__ - INFO -          - Local Outlier Factor (LOF)
+2026-01-27 23:34:08,905 - __main__ - INFO -          - K-Means Clustering
+2026-01-27 23:34:08,905 - __main__ - INFO -          - DBSCAN
+2026-01-27 23:34:08,905 - __main__ - INFO -          - One-Class SVM
+2026-01-27 23:34:08,905 - __main__ - INFO - 
+2026-01-27 23:34:08,905 - __main__ - INFO - ============================================================
+2026-01-27 23:34:08,905 - __main__ - INFO - TRAINING UNSUPERVISED ENSEMBLE (5 ALGORITHMS)
+2026-01-27 23:34:08,905 - __main__ - INFO - ============================================================
+2026-01-27 23:34:08,905 - __main__ - INFO - [1/5] Training Isolation Forest...
+2026-01-27 23:34:09,213 - __main__ - INFO -       [OK] Isolation Forest trained
+2026-01-27 23:34:09,213 - __main__ - INFO - [2/5] Training LOF...
+2026-01-27 23:34:09,537 - __main__ - INFO -       [OK] LOF trained
+2026-01-27 23:34:09,537 - __main__ - INFO - [3/5] Training K-Means...
+2026-01-27 23:34:09,610 - __main__ - INFO -       [OK] K-Means trained
+2026-01-27 23:34:09,610 - __main__ - INFO - [4/5] Training DBSCAN...
+2026-01-27 23:34:09,616 - __main__ - INFO -       [OK] DBSCAN initialized
+2026-01-27 23:34:09,616 - __main__ - INFO - [5/5] Training One-Class SVM...
+2026-01-27 23:34:09,619 - __main__ - INFO -       [OK] One-Class SVM trained
+2026-01-27 23:34:09,619 - __main__ - INFO - ============================================================
+2026-01-27 23:34:09,619 - __main__ - INFO - [OK] ALL 5 MODELS TRAINED SUCCESSFULLY
+2026-01-27 23:34:09,619 - __main__ - INFO - ============================================================
+2026-01-27 23:34:09,619 - __main__ - INFO - 
+2026-01-27 23:34:09,619 - __main__ - INFO - [STEP 7] Saving Trained Models
+2026-01-27 23:34:09,767 - __main__ - INFO -          Models saved to data/models/
+2026-01-27 23:34:09,768 - __main__ - INFO -          - ensemble.joblib
+2026-01-27 23:34:09,768 - __main__ - INFO -          - scaler.joblib
+2026-01-27 23:34:09,769 - __main__ - INFO -          - device_mapping.json
+2026-01-27 23:34:09,769 - __main__ - INFO - 
+2026-01-27 23:34:09,769 - __main__ - INFO - ================================================================================
+2026-01-27 23:34:09,769 - __main__ - INFO - TRAINING COMPLETE - SUMMARY
+2026-01-27 23:34:09,769 - __main__ - INFO - ================================================================================
+2026-01-27 23:34:09,769 - __main__ - INFO - Total Flows Processed:      10,000
+2026-01-27 23:34:09,769 - __main__ - INFO - Features Extracted:         59
+2026-01-27 23:34:09,769 - __main__ - INFO - Devices Identified:         254
+2026-01-27 23:34:09,769 - __main__ - INFO - Normal Traffic (Benign):    344
+2026-01-27 23:34:09,771 - __main__ - INFO - Algorithms Trained:         5 (Ensemble)
+2026-01-27 23:34:09,771 - __main__ - INFO - Baselines Created:          254 devices
+2026-01-27 23:34:09,771 - __main__ - INFO - ================================================================================
+2026-01-27 23:34:09,771 - database.db_connector - INFO - PostgreSQL connection pool closed
+2026-01-27 23:34:09,774 - database.db_connector - INFO - Redis connection closed
+2026-01-27 23:36:50,577 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-27 23:36:50,590 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-27 23:36:50,594 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-27 23:36:50,594 - __main__ - INFO - 
+================================================================================
+2026-01-27 23:36:50,597 - __main__ - INFO - STARTING DETECTION PHASE
+2026-01-27 23:36:50,597 - __main__ - INFO - ================================================================================
+
+2026-01-27 23:36:50,597 - __main__ - INFO - [STEP 1] Loading trained models...
+2026-01-27 23:36:51,223 - __main__ - INFO -          Models loaded successfully
+2026-01-27 23:36:51,224 - __main__ - INFO - 
+2026-01-27 23:36:51,225 - __main__ - INFO - [STEP 2] Loading dataset from data/processed/CICIoMT2024_processed.csv...
+2026-01-27 23:36:51,256 - __main__ - INFO -          Loaded 1,000 flows
+2026-01-27 23:36:51,262 - __main__ - INFO - 
+2026-01-27 23:36:51,263 - __main__ - INFO - [STEP 3] Extracting features...
+2026-01-27 23:36:51,263 - preprocessing.feature_extractor - INFO - Extracting features from 1000 flows...
+2026-01-27 23:36:51,263 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-27 23:36:51,389 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-27 23:36:51,389 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-27 23:36:51,520 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-27 23:36:51,520 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-27 23:36:51,520 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-27 23:36:51,520 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-27 23:36:51,520 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-27 23:36:51,525 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-27 23:36:51,525 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-27 23:36:51,526 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-27 23:36:51,527 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-27 23:36:51,527 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-27 23:36:51,528 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-27 23:36:51,534 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-27 23:36:51,534 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-27 23:36:51,534 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-27 23:36:51,571 - preprocessing.feature_extractor - INFO - [OK] Features normalized (inference mode - using existing scaler)
+2026-01-27 23:36:51,571 - __main__ - INFO -          Extracted and normalized 59 features
+2026-01-27 23:36:51,576 - __main__ - INFO - 
+2026-01-27 23:36:51,576 - __main__ - INFO - [STEP 4] Mapping devices...
+2026-01-27 23:36:51,576 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-27 23:36:54,117 - detection.device_profiler - INFO - [OK] Identified 254 unique devices (254 newly registered)
+2026-01-27 23:36:54,117 - __main__ - INFO -          Mapped 254 devices
+2026-01-27 23:36:54,117 - __main__ - INFO - 
+2026-01-27 23:36:54,117 - __main__ - INFO - [STEP 5] Running ensemble detection...
+2026-01-27 23:36:54,124 - __main__ - INFO -          Analyzing with 5 algorithms...
+2026-01-27 23:36:54,779 - __main__ - INFO -          Detected 63 anomalies (6.3%)
+2026-01-27 23:36:54,779 - __main__ - INFO - 
+2026-01-27 23:36:54,779 - __main__ - INFO - [STEP 6] Saving results to database...
+2026-01-27 23:36:55,000 - __main__ - INFO -          Saved 1,000 flows, generated 0 alerts
+2026-01-27 23:36:55,000 - __main__ - INFO -          Results saved successfully
+2026-01-27 23:36:55,000 - __main__ - INFO - 
+2026-01-27 23:36:55,000 - __main__ - INFO - ================================================================================
+2026-01-27 23:36:55,000 - __main__ - INFO - DETECTION COMPLETE - SUMMARY
+2026-01-27 23:36:55,006 - __main__ - INFO - ================================================================================
+2026-01-27 23:36:55,007 - __main__ - INFO - Total Flows Analyzed:       1,000
+2026-01-27 23:36:55,007 - __main__ - INFO - Anomalies Detected:         63
+2026-01-27 23:36:55,008 - __main__ - INFO - Normal Traffic:             937
+2026-01-27 23:36:55,008 - __main__ - INFO - Detection Rate:             6.30%
+2026-01-27 23:36:55,008 - __main__ - INFO - Ensemble Threshold:         0.7
+2026-01-27 23:36:55,008 - __main__ - INFO - 
+Algorithm-Specific Detection:
+2026-01-27 23:36:55,008 - __main__ - INFO -   isolation_forest    : 522 anomalies
+2026-01-27 23:36:55,008 - __main__ - INFO -   lof                 : 831 anomalies
+2026-01-27 23:36:55,015 - __main__ - INFO -   kmeans              : 4 anomalies
+2026-01-27 23:36:55,015 - __main__ - INFO -   dbscan              : 91 anomalies
+2026-01-27 23:36:55,015 - __main__ - INFO -   ocsvm               : 817 anomalies
+2026-01-27 23:36:55,019 - __main__ - INFO - ================================================================================
+2026-01-27 23:36:55,020 - database.db_connector - INFO - PostgreSQL connection pool closed
+2026-01-27 23:36:55,020 - database.db_connector - INFO - Redis connection closed
+2026-01-27 23:37:34,522 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-27 23:37:34,525 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-27 23:37:34,525 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-27 23:37:34,525 - __main__ - INFO - 
+================================================================================
+2026-01-27 23:37:34,525 - __main__ - INFO - STARTING DETECTION PHASE
+2026-01-27 23:37:34,525 - __main__ - INFO - ================================================================================
+
+2026-01-27 23:37:34,525 - __main__ - INFO - [STEP 1] Loading trained models...
+2026-01-27 23:37:34,663 - __main__ - INFO -          Models loaded successfully
+2026-01-27 23:37:34,664 - __main__ - INFO - 
+2026-01-27 23:37:34,664 - __main__ - INFO - [STEP 2] Loading dataset from data/processed/CICIoMT2024_processed.csv...
+2026-01-27 23:37:34,678 - __main__ - INFO -          Loaded 1,000 flows
+2026-01-27 23:37:34,678 - __main__ - INFO - 
+2026-01-27 23:37:34,678 - __main__ - INFO - [STEP 3] Extracting features...
+2026-01-27 23:37:34,685 - preprocessing.feature_extractor - INFO - Extracting features from 1000 flows...
+2026-01-27 23:37:34,685 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-27 23:37:34,742 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-27 23:37:34,742 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-27 23:37:34,790 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-27 23:37:34,790 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-27 23:37:34,790 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-27 23:37:34,790 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-27 23:37:34,790 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-27 23:37:34,790 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-27 23:37:34,790 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-27 23:37:34,790 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-27 23:37:34,806 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-27 23:37:34,813 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-27 23:37:34,813 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-27 23:37:34,813 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-27 23:37:34,813 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-27 23:37:34,813 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-27 23:37:34,813 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-27 23:37:34,813 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-27 23:37:34,828 - preprocessing.feature_extractor - INFO - [OK] Features normalized (inference mode - using existing scaler)
+2026-01-27 23:37:34,828 - __main__ - INFO -          Extracted and normalized 59 features
+2026-01-27 23:37:34,837 - __main__ - INFO - 
+2026-01-27 23:37:34,837 - __main__ - INFO - [STEP 4] Mapping devices...
+2026-01-27 23:37:34,837 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-27 23:37:36,105 - detection.device_profiler - INFO - [OK] Identified 254 unique devices (254 newly registered)
+2026-01-27 23:37:36,105 - __main__ - INFO -          Mapped 254 devices
+2026-01-27 23:37:36,105 - __main__ - INFO - 
+2026-01-27 23:37:36,105 - __main__ - INFO - [STEP 5] Running ensemble detection...
+2026-01-27 23:37:36,105 - __main__ - INFO -          Analyzing with 5 algorithms...
+2026-01-27 23:37:36,421 - __main__ - INFO -          Detected 63 anomalies (6.3%)
+2026-01-27 23:37:36,421 - __main__ - INFO - 
+2026-01-27 23:37:36,421 - __main__ - INFO - [STEP 6] Saving results to database...
+2026-01-27 23:37:36,481 - __main__ - INFO -          Saved 1,000 flows, generated 0 alerts
+2026-01-27 23:37:36,483 - __main__ - INFO -          Results saved successfully
+2026-01-27 23:37:36,483 - __main__ - INFO - 
+2026-01-27 23:37:36,483 - __main__ - INFO - ================================================================================
+2026-01-27 23:37:36,483 - __main__ - INFO - DETECTION COMPLETE - SUMMARY
+2026-01-27 23:37:36,483 - __main__ - INFO - ================================================================================
+2026-01-27 23:37:36,483 - __main__ - INFO - Total Flows Analyzed:       1,000
+2026-01-27 23:37:36,483 - __main__ - INFO - Anomalies Detected:         63
+2026-01-27 23:37:36,483 - __main__ - INFO - Normal Traffic:             937
+2026-01-27 23:37:36,483 - __main__ - INFO - Detection Rate:             6.30%
+2026-01-27 23:37:36,483 - __main__ - INFO - Ensemble Threshold:         0.7
+2026-01-27 23:37:36,483 - __main__ - INFO - 
+Algorithm-Specific Detection:
+2026-01-27 23:37:36,483 - __main__ - INFO -   isolation_forest    : 522 anomalies
+2026-01-27 23:37:36,483 - __main__ - INFO -   lof                 : 831 anomalies
+2026-01-27 23:37:36,483 - __main__ - INFO -   kmeans              : 4 anomalies
+2026-01-27 23:37:36,483 - __main__ - INFO -   dbscan              : 91 anomalies
+2026-01-27 23:37:36,487 - __main__ - INFO -   ocsvm               : 817 anomalies
+2026-01-27 23:37:36,487 - __main__ - INFO - ================================================================================
+2026-01-27 23:37:36,487 - database.db_connector - INFO - PostgreSQL connection pool closed
+2026-01-27 23:37:36,487 - database.db_connector - INFO - Redis connection closed
+2026-01-27 23:39:15,012 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-27 23:39:15,019 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-27 23:39:15,019 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-27 23:39:15,019 - __main__ - INFO - 
+================================================================================
+2026-01-27 23:39:15,019 - __main__ - INFO - STARTING DETECTION PHASE
+2026-01-27 23:39:15,019 - __main__ - INFO - ================================================================================
+
+2026-01-27 23:39:15,019 - __main__ - INFO - [STEP 1] Loading trained models...
+2026-01-27 23:39:15,130 - __main__ - INFO -          Models loaded successfully
+2026-01-27 23:39:15,130 - __main__ - INFO - 
+2026-01-27 23:39:15,130 - __main__ - INFO - [STEP 2] Loading dataset from data/processed/CICIoMT2024_processed.csv...
+2026-01-27 23:39:15,199 - __main__ - INFO -          Loaded 10,000 flows
+2026-01-27 23:39:15,199 - __main__ - INFO - 
+2026-01-27 23:39:15,199 - __main__ - INFO - [STEP 3] Extracting features...
+2026-01-27 23:39:15,199 - preprocessing.feature_extractor - INFO - Extracting features from 10000 flows...
+2026-01-27 23:39:15,199 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-27 23:39:15,256 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-27 23:39:15,256 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-27 23:39:15,606 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-27 23:39:15,618 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-27 23:39:15,618 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-27 23:39:15,618 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-27 23:39:15,618 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-27 23:39:15,618 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-27 23:39:15,618 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-27 23:39:15,618 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-27 23:39:15,652 - preprocessing.feature_extractor - INFO - [OK] Features normalized (inference mode - using existing scaler)
+2026-01-27 23:39:15,652 - __main__ - INFO -          Extracted and normalized 59 features
+2026-01-27 23:39:15,652 - __main__ - INFO - 
+2026-01-27 23:39:15,652 - __main__ - INFO - [STEP 4] Mapping devices...
+2026-01-27 23:39:15,652 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-27 23:39:17,065 - detection.device_profiler - INFO - [OK] Identified 254 unique devices (254 newly registered)
+2026-01-27 23:39:17,065 - __main__ - INFO -          Mapped 254 devices
+2026-01-27 23:39:17,065 - __main__ - INFO - 
+2026-01-27 23:39:17,065 - __main__ - INFO - [STEP 5] Running ensemble detection...
+2026-01-27 23:39:17,073 - __main__ - INFO -          Analyzing with 5 algorithms...
+2026-01-27 23:39:17,917 - __main__ - INFO -          Detected 298 anomalies (3.0%)
+2026-01-27 23:39:17,917 - __main__ - INFO - 
+2026-01-27 23:39:17,917 - __main__ - INFO - [STEP 6] Saving results to database...
+2026-01-27 23:39:18,489 - __main__ - INFO -          Saved 10,000 flows, generated 0 alerts
+2026-01-27 23:39:18,513 - __main__ - INFO -          Results saved successfully
+2026-01-27 23:39:18,513 - __main__ - INFO - 
+2026-01-27 23:39:18,513 - __main__ - INFO - ================================================================================
+2026-01-27 23:39:18,513 - __main__ - INFO - DETECTION COMPLETE - SUMMARY
+2026-01-27 23:39:18,513 - __main__ - INFO - ================================================================================
+2026-01-27 23:39:18,513 - __main__ - INFO - Total Flows Analyzed:       10,000
+2026-01-27 23:39:18,513 - __main__ - INFO - Anomalies Detected:         298
+2026-01-27 23:39:18,513 - __main__ - INFO - Normal Traffic:             9,702
+2026-01-27 23:39:18,513 - __main__ - INFO - Detection Rate:             2.98%
+2026-01-27 23:39:18,513 - __main__ - INFO - Ensemble Threshold:         0.7
+2026-01-27 23:39:18,513 - __main__ - INFO - 
+Algorithm-Specific Detection:
+2026-01-27 23:39:18,522 - __main__ - INFO -   isolation_forest    : 5,152 anomalies
+2026-01-27 23:39:18,524 - __main__ - INFO -   lof                 : 8,284 anomalies
+2026-01-27 23:39:18,524 - __main__ - INFO -   kmeans              : 2 anomalies
+2026-01-27 23:39:18,527 - __main__ - INFO -   dbscan              : 419 anomalies
+2026-01-27 23:39:18,527 - __main__ - INFO -   ocsvm               : 8,173 anomalies
+2026-01-27 23:39:18,527 - __main__ - INFO - ================================================================================
+2026-01-27 23:39:18,527 - database.db_connector - INFO - PostgreSQL connection pool closed
+2026-01-27 23:39:18,537 - database.db_connector - INFO - Redis connection closed
+2026-01-27 23:40:45,220 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-27 23:40:45,220 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-27 23:40:45,236 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-27 23:40:45,236 - __main__ - INFO - 
+================================================================================
+2026-01-27 23:40:45,236 - __main__ - INFO - STARTING TRAINING PHASE
+2026-01-27 23:40:45,236 - __main__ - INFO - ================================================================================
+
+2026-01-27 23:40:45,236 - __main__ - INFO - [STEP 1] Loading dataset from data/processed/CICIoMT2024_processed.csv...
+2026-01-27 23:40:56,415 - __main__ - INFO -          Loaded 2,217,697 flows
+2026-01-27 23:40:56,422 - __main__ - INFO -          Columns: 42
+2026-01-27 23:40:56,422 - __main__ - INFO - 
+2026-01-27 23:40:56,422 - __main__ - INFO - [STEP 2] Feature Extraction (Research Objective 1)
+2026-01-27 23:40:56,422 - preprocessing.feature_extractor - INFO - Extracting features from 2217697 flows...
+2026-01-27 23:40:56,422 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-27 23:41:06,629 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-27 23:41:06,664 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-27 23:42:30,400 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-27 23:42:30,416 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-27 23:42:30,431 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-27 23:42:30,431 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-27 23:42:30,431 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-27 23:42:30,431 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-27 23:42:30,431 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-27 23:42:30,447 - __main__ - INFO -          Extracted 59 features
+2026-01-27 23:42:34,661 - preprocessing.feature_extractor - INFO - [OK] Features normalized (training mode - fitted new scaler)
+2026-01-27 23:42:34,661 - __main__ - INFO -          Features normalized using StandardScaler
+2026-01-27 23:42:34,661 - __main__ - INFO - 
+2026-01-27 23:42:34,661 - __main__ - INFO - [STEP 3] Device Identification & Mapping (Research Objective 1)
+2026-01-27 23:42:34,661 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-27 23:42:36,230 - detection.device_profiler - INFO - [OK] Identified 254 unique devices (254 newly registered)
+2026-01-27 23:42:36,230 - __main__ - INFO -          Identified 254 unique devices
+2026-01-27 23:42:36,230 - __main__ - INFO - 
+2026-01-27 23:42:36,230 - __main__ - INFO - [STEP 4] Separating Normal Traffic for Baseline
+2026-01-27 23:42:37,592 - __main__ - INFO -          Found labels: ['12.0' '14.0' '16.0' '11.0' '15.0' '0.0' '13.0' '17.0']
+2026-01-27 23:42:37,957 - __main__ - INFO -          Found 73,905 benign flows (3.3%)
+2026-01-27 23:42:37,957 - __main__ - INFO - 
+2026-01-27 23:42:37,957 - __main__ - INFO - [STEP 5] Building Device Behavioral Baselines (Research Objective 2)
+2026-01-27 23:42:37,957 - __main__ - INFO -          Creating statistical profiles with z-score normalization
+2026-01-27 23:42:37,957 - detection.device_profiler - INFO - Building baselines for all devices...
+2026-01-27 23:42:40,221 - detection.device_profiler - INFO - [OK] Baselines built for 0 devices
+2026-01-27 23:42:40,221 - __main__ - INFO - 
+2026-01-27 23:42:40,221 - __main__ - INFO - [STEP 6] Training Unsupervised Ensemble (Research Objective 3)
+2026-01-27 23:42:40,221 - __main__ - INFO -          Training 5 algorithms concurrently:
+2026-01-27 23:42:40,221 - __main__ - INFO -          - Isolation Forest
+2026-01-27 23:42:40,221 - __main__ - INFO -          - Local Outlier Factor (LOF)
+2026-01-27 23:42:40,221 - __main__ - INFO -          - K-Means Clustering
+2026-01-27 23:42:40,237 - __main__ - INFO -          - DBSCAN
+2026-01-27 23:42:40,237 - __main__ - INFO -          - One-Class SVM
+2026-01-27 23:42:40,237 - __main__ - INFO - 
+2026-01-27 23:42:40,253 - __main__ - INFO - ============================================================
+2026-01-27 23:42:40,253 - __main__ - INFO - TRAINING UNSUPERVISED ENSEMBLE (5 ALGORITHMS)
+2026-01-27 23:42:40,253 - __main__ - INFO - ============================================================
+2026-01-27 23:42:40,253 - __main__ - INFO - [1/5] Training Isolation Forest...
+2026-01-27 23:42:41,298 - __main__ - INFO -       [OK] Isolation Forest trained
+2026-01-27 23:42:41,298 - __main__ - INFO - [2/5] Training LOF...
+2026-01-27 23:42:48,190 - __main__ - INFO -       [OK] LOF trained
+2026-01-27 23:42:48,192 - __main__ - INFO - [3/5] Training K-Means...
+2026-01-27 23:42:48,973 - __main__ - INFO -       [OK] K-Means trained
+2026-01-27 23:42:48,973 - __main__ - INFO - [4/5] Training DBSCAN...
+2026-01-27 23:42:48,973 - __main__ - INFO -       [OK] DBSCAN initialized
+2026-01-27 23:42:48,973 - __main__ - INFO - [5/5] Training One-Class SVM...
+2026-01-27 23:44:44,489 - __main__ - INFO -       [OK] One-Class SVM trained
+2026-01-27 23:44:44,505 - __main__ - INFO - ============================================================
+2026-01-27 23:44:44,505 - __main__ - INFO - [OK] ALL 5 MODELS TRAINED SUCCESSFULLY
+2026-01-27 23:44:44,505 - __main__ - INFO - ============================================================
+2026-01-27 23:44:44,505 - __main__ - INFO - 
+2026-01-27 23:44:44,505 - __main__ - INFO - [STEP 7] Saving Trained Models
+2026-01-27 23:44:44,664 - __main__ - INFO -          Models saved to data/models/
+2026-01-27 23:44:44,680 - __main__ - INFO -          - ensemble.joblib
+2026-01-27 23:44:44,680 - __main__ - INFO -          - scaler.joblib
+2026-01-27 23:44:44,680 - __main__ - INFO -          - device_mapping.json
+2026-01-27 23:44:44,680 - __main__ - INFO - 
+2026-01-27 23:44:44,680 - __main__ - INFO - ================================================================================
+2026-01-27 23:44:44,680 - __main__ - INFO - TRAINING COMPLETE - SUMMARY
+2026-01-27 23:44:44,680 - __main__ - INFO - ================================================================================
+2026-01-27 23:44:44,680 - __main__ - INFO - Total Flows Processed:      2,217,697
+2026-01-27 23:44:44,680 - __main__ - INFO - Features Extracted:         59
+2026-01-27 23:44:44,680 - __main__ - INFO - Devices Identified:         254
+2026-01-27 23:44:44,680 - __main__ - INFO - Normal Traffic (Benign):    73,905
+2026-01-27 23:44:44,696 - __main__ - INFO - Algorithms Trained:         5 (Ensemble)
+2026-01-27 23:44:44,696 - __main__ - INFO - Baselines Created:          254 devices
+2026-01-27 23:44:44,696 - __main__ - INFO - ================================================================================
+2026-01-27 23:44:44,919 - database.db_connector - INFO - PostgreSQL connection pool closed
+2026-01-27 23:44:44,919 - database.db_connector - INFO - Redis connection closed
+2026-01-28 07:25:09,791 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-28 07:25:09,808 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-28 07:25:09,812 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-28 07:25:09,813 - __main__ - INFO - 
+================================================================================
+2026-01-28 07:25:09,813 - __main__ - INFO - STARTING DETECTION PHASE
+2026-01-28 07:25:09,814 - __main__ - INFO - ================================================================================
+
+2026-01-28 07:25:09,815 - __main__ - INFO - [STEP 1] Loading trained models...
+2026-01-28 07:25:10,195 - __main__ - INFO -          Models loaded successfully
+2026-01-28 07:25:10,195 - __main__ - INFO - 
+2026-01-28 07:25:10,195 - __main__ - INFO - [STEP 2] Loading dataset from data/processed/CICIoMT2024_test.csv...
+2026-01-28 07:25:13,228 - __main__ - INFO -          Loaded 443,540 flows
+2026-01-28 07:25:13,232 - __main__ - INFO - 
+2026-01-28 07:25:13,232 - __main__ - INFO - [STEP 3] Extracting features...
+2026-01-28 07:25:13,232 - preprocessing.feature_extractor - INFO - Extracting features from 443540 flows...
+2026-01-28 07:25:13,232 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-28 07:25:14,528 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-28 07:25:14,528 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-28 07:25:38,279 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-28 07:25:38,603 - preprocessing.feature_extractor - INFO - [OK] Features normalized (inference mode - using existing scaler)
+2026-01-28 07:25:38,603 - __main__ - INFO -          Extracted and normalized 59 features
+2026-01-28 07:25:38,603 - __main__ - INFO - 
+2026-01-28 07:25:38,603 - __main__ - INFO - [STEP 4] Mapping devices...
+2026-01-28 07:25:38,603 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-28 07:25:39,260 - detection.device_profiler - INFO - [OK] Identified 254 unique devices (254 newly registered)
+2026-01-28 07:25:39,260 - __main__ - INFO -          Mapped 254 devices
+2026-01-28 07:25:39,260 - __main__ - INFO - 
+2026-01-28 07:25:39,260 - __main__ - INFO - [STEP 5] Running ensemble detection...
+2026-01-28 07:25:39,260 - __main__ - INFO -          Analyzing with 5 algorithms...
+2026-01-28 07:51:00,123 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-28 07:51:00,125 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-28 07:51:00,139 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-28 07:51:00,139 - __main__ - INFO - 
+================================================================================
+2026-01-28 07:51:00,139 - __main__ - INFO - STARTING DETECTION PHASE
+2026-01-28 07:51:00,139 - __main__ - INFO - ================================================================================
+
+2026-01-28 07:51:00,139 - __main__ - INFO - [STEP 1] Loading trained models...
+2026-01-28 07:51:00,346 - __main__ - INFO -          Models loaded successfully
+2026-01-28 07:51:00,346 - __main__ - INFO - 
+2026-01-28 07:51:00,346 - __main__ - INFO - [STEP 2] Loading dataset from data/processed/CICIoMT2024_test.csv...
+2026-01-28 07:51:01,757 - __main__ - INFO -          Loaded 443,540 flows
+2026-01-28 07:51:01,757 - __main__ - INFO - 
+2026-01-28 07:51:01,757 - __main__ - INFO - [STEP 3] Extracting features...
+2026-01-28 07:51:01,757 - preprocessing.feature_extractor - INFO - Extracting features from 443540 flows...
+2026-01-28 07:51:01,757 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-28 07:51:02,550 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-28 07:51:02,550 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-28 07:51:22,212 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-28 07:51:22,212 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-28 07:51:22,212 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-28 07:51:22,217 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-28 07:51:22,217 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-28 07:51:22,217 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-28 07:51:22,217 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-28 07:51:22,219 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-28 07:51:22,219 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-28 07:51:22,219 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-28 07:51:22,220 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-28 07:51:22,220 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-28 07:51:22,220 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-28 07:51:22,220 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-28 07:51:22,221 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-28 07:51:22,221 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-28 07:51:22,222 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-28 07:51:22,222 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-28 07:51:22,222 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-28 07:51:22,222 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-28 07:51:22,223 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-28 07:51:22,223 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-28 07:51:22,223 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-28 07:51:22,223 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-28 07:51:22,223 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-28 07:51:22,225 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-28 07:51:22,226 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-28 07:51:22,226 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-28 07:51:22,840 - preprocessing.feature_extractor - INFO - [OK] Features normalized (inference mode - using existing scaler)
+2026-01-28 07:51:22,840 - __main__ - INFO -          Extracted and normalized 59 features
+2026-01-28 07:51:22,840 - __main__ - INFO - 
+2026-01-28 07:51:22,840 - __main__ - INFO - [STEP 4] Mapping devices...
+2026-01-28 07:51:22,840 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-28 07:51:24,574 - detection.device_profiler - INFO - [OK] Identified 254 unique devices (254 newly registered)
+2026-01-28 07:51:24,574 - __main__ - INFO -          Mapped 254 devices
+2026-01-28 07:51:24,574 - __main__ - INFO - 
+2026-01-28 07:51:24,574 - __main__ - INFO - [STEP 5] Running ensemble detection...
+2026-01-28 07:51:24,574 - __main__ - INFO -          Analyzing with 5 algorithms...
+2026-01-28 08:21:39,794 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-01-28 08:21:39,808 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-01-28 08:21:39,808 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-01-28 08:21:39,808 - __main__ - INFO - 
+================================================================================
+2026-01-28 08:21:39,808 - __main__ - INFO - STARTING DETECTION PHASE
+2026-01-28 08:21:39,808 - __main__ - INFO - ================================================================================
+
+2026-01-28 08:21:39,808 - __main__ - INFO - [STEP 1] Loading trained models...
+2026-01-28 08:21:39,998 - __main__ - INFO -          Models loaded successfully
+2026-01-28 08:21:39,998 - __main__ - INFO - 
+2026-01-28 08:21:39,998 - __main__ - INFO - [STEP 2] Loading dataset from data/processed/CICIoMT2024_processed.csv...
+2026-01-28 08:21:49,750 - __main__ - INFO -          Loaded 2,217,697 flows
+2026-01-28 08:21:49,750 - __main__ - INFO - 
+2026-01-28 08:21:49,750 - __main__ - INFO - [STEP 3] Extracting features...
+2026-01-28 08:21:49,750 - preprocessing.feature_extractor - INFO - Extracting features from 2217697 flows...
+2026-01-28 08:21:49,750 - preprocessing.feature_extractor - INFO - Input columns: 42
+2026-01-28 08:21:56,836 - preprocessing.feature_extractor - INFO - [OK] Extracted 59 features through engineering
+2026-01-28 08:21:56,836 - preprocessing.feature_extractor - INFO - Feature categories: Statistical(20) + TCP(11) + Protocol(13) + Behavioral(15)
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - 
+======================================================================
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - FEATURE ENGINEERING SUMMARY
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - ======================================================================
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - Input: 42 raw columns from CICIoMT2024 dataset
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - Output: 59 engineered features
+
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - 📋 Direct mapping: 8 features
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO -    → header_length through variance
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - 📋 Statistical measures: 4 features
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO -    → min, max, avg, std
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED ratios and rates: 8 features
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO -    → range, CV, size_per_packet, rates, efficiency
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - 📋 Direct TCP flags: 7 features
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO -    → 7 TCP flag indicators
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - 📋 TCP flag counts: 4 features
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO -    → ack, syn, fin, rst counts
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - 📋 Direct protocol indicators: 13 features
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO -    → Application and transport layer protocols
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED connection behavior: 5 features
+2026-01-28 08:23:35,578 - preprocessing.feature_extractor - INFO -    → flag_density, SYN-ACK ratio, FIN-RST ratio, control ratios
+2026-01-28 08:23:35,594 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED protocol analysis: 4 features
+2026-01-28 08:23:35,594 - preprocessing.feature_extractor - INFO -    → diversity, TCP-UDP ratio, encryption, network layer
+2026-01-28 08:23:35,594 - preprocessing.feature_extractor - INFO - 🔧 ENGINEERED traffic patterns: 6 features
+2026-01-28 08:23:35,594 - preprocessing.feature_extractor - INFO -    → burstiness, intensity, regularity, overhead, control
+2026-01-28 08:23:35,594 - preprocessing.feature_extractor - INFO - 
+----------------------------------------------------------------------
+2026-01-28 08:23:35,595 - preprocessing.feature_extractor - INFO - Direct mappings:      36 features
+2026-01-28 08:23:35,595 - preprocessing.feature_extractor - INFO - Engineered features:  23 features
+2026-01-28 08:23:35,595 - preprocessing.feature_extractor - INFO - TOTAL:                59 features
+2026-01-28 08:23:35,595 - preprocessing.feature_extractor - INFO - ======================================================================
+
+2026-01-28 08:23:37,759 - preprocessing.feature_extractor - INFO - [OK] Features normalized (inference mode - using existing scaler)
+2026-01-28 08:23:37,759 - __main__ - INFO -          Extracted and normalized 59 features
+2026-01-28 08:23:37,759 - __main__ - INFO - 
+2026-01-28 08:23:37,759 - __main__ - INFO - [STEP 4] Mapping devices...
+2026-01-28 08:23:37,775 - detection.device_profiler - INFO - Identifying devices from traffic...
+2026-01-28 08:23:39,175 - detection.device_profiler - INFO - [OK] Identified 254 unique devices (254 newly registered)
+2026-01-28 08:23:39,175 - __main__ - INFO -          Mapped 254 devices
+2026-01-28 08:23:39,175 - __main__ - INFO - 
+2026-01-28 08:23:39,175 - __main__ - INFO - [STEP 5] Running ensemble detection...
+2026-01-28 08:23:39,175 - __main__ - INFO -          Analyzing with 5 algorithms...

@@ -1,0 +1,391 @@
+2026-03-14 21:31:25,983 - __main__ - INFO - ================================================================================
+2026-03-14 21:31:25,983 - __main__ - INFO - IoMT IDS - BASELINE PROFILING SYSTEM
+2026-03-14 21:31:25,984 - __main__ - INFO - ================================================================================
+2026-03-14 21:31:25,984 - __main__ - INFO - Mode: TRAIN
+2026-03-14 21:31:25,984 - __main__ - INFO - Dataset: data/processed/CICIoMT2024_processed.csv
+2026-03-14 21:31:25,984 - __main__ - INFO - Auto-reset: ON
+2026-03-14 21:31:25,984 - __main__ - INFO - Timestamp: 2026-03-14 21:31:25
+2026-03-14 21:31:26,116 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-03-14 21:31:26,137 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-03-14 21:31:26,140 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-03-14 21:31:26,140 - __main__ - INFO - 
+[DATABASE STATE CHECK]
+2026-03-14 21:31:26,141 - __main__ - INFO - ────────────────────────────────────────
+2026-03-14 21:31:26,142 - __main__ - INFO -   Connected to database:    iomt_ids
+2026-03-14 21:31:26,142 - __main__ - INFO -   Connected as user:        postgres
+2026-03-14 21:31:26,152 - __main__ - INFO -   Baselines table:          1 rows
+2026-03-14 21:31:26,160 - __main__ - INFO -   Scenario_baselines table: 60 rows
+2026-03-14 21:31:26,161 - __main__ - INFO -   Existing baselines:
+2026-03-14 21:31:26,161 - __main__ - INFO -     - ID 1: benign_normal
+2026-03-14 21:31:26,163 - __main__ - INFO -   Baseline sequence:        last_value=1
+2026-03-14 21:31:26,163 - __main__ - INFO - ────────────────────────────────────────
+2026-03-14 21:31:26,165 - __main__ - INFO - 
+[DATABASE RESET]
+2026-03-14 21:31:26,165 - __main__ - INFO - ────────────────────────────────────────
+2026-03-14 21:31:26,165 - __main__ - INFO -   Deleting existing data...
+2026-03-14 21:31:26,206 - __main__ - INFO -   Resetting sequences...
+2026-03-14 21:31:26,214 - __main__ - INFO -   ✅ Database reset complete!
+2026-03-14 21:31:26,215 - __main__ - INFO - ────────────────────────────────────────
+2026-03-14 21:31:26,217 - __main__ - INFO -   ✅ Redis cache is clean (no baseline entries found)
+2026-03-14 21:31:26,217 - __main__ - INFO - 
+[DATABASE STATE CHECK]
+2026-03-14 21:31:26,217 - __main__ - INFO - ────────────────────────────────────────
+2026-03-14 21:31:26,218 - __main__ - INFO -   Connected to database:    iomt_ids
+2026-03-14 21:31:26,218 - __main__ - INFO -   Connected as user:        postgres
+2026-03-14 21:31:26,219 - __main__ - INFO -   Baselines table:          0 rows
+2026-03-14 21:31:26,221 - __main__ - INFO -   Scenario_baselines table: 0 rows
+2026-03-14 21:31:26,221 - __main__ - INFO -   Baseline sequence:        last_value=1
+2026-03-14 21:31:26,222 - __main__ - INFO - ────────────────────────────────────────
+2026-03-14 21:31:26,222 - detection.baseline_profiler - INFO - ================================================================================
+2026-03-14 21:31:26,223 - detection.baseline_profiler - INFO - BASELINE PROFILER INITIALIZED (Scenario-Based)
+2026-03-14 21:31:26,223 - detection.baseline_profiler - INFO - ================================================================================
+2026-03-14 21:31:26,223 - detection.baseline_profiler - INFO -   Config:
+2026-03-14 21:31:26,223 - detection.baseline_profiler - INFO -     - min_samples_for_baseline: 5
+2026-03-14 21:31:26,223 - detection.baseline_profiler - INFO -     - z_score_threshold: 3.0
+2026-03-14 21:31:26,223 - detection.baseline_profiler - INFO - ================================================================================
+
+2026-03-14 21:31:31,600 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:31,601 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:32,299 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:32,300 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:32,300 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:32,300 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:33,121 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:33,121 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:33,786 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:33,786 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:33,786 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:33,786 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:34,602 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:34,602 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:35,287 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:35,287 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:35,287 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:35,287 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:36,124 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:36,124 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:36,746 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:36,746 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:36,746 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:36,746 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:37,556 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:37,556 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:38,222 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:38,222 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:38,222 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:38,222 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:39,045 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:39,045 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:39,724 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:39,724 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:39,724 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:39,724 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:40,543 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:40,543 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:41,241 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:41,241 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:41,241 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:41,241 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:42,110 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:42,111 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:42,834 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:42,834 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:42,834 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:42,834 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:43,734 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:43,734 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:44,538 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:44,538 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:44,538 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:44,538 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:45,508 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:45,509 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:46,232 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:46,232 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:46,233 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:46,233 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:47,172 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:47,173 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:47,878 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:47,878 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:47,878 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:47,878 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:48,981 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:48,981 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:49,729 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:49,729 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:49,729 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:49,729 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:50,613 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:50,613 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:51,298 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:51,298 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:51,298 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:51,298 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:52,190 - preprocessing.feature_extractor - INFO - Extracting features from 200,000 flows...
+2026-03-14 21:31:52,190 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:52,846 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:52,846 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:52,846 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:52,846 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:31:53,626 - preprocessing.feature_extractor - INFO - Extracting features from 171,454 flows...
+2026-03-14 21:31:53,626 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:31:54,340 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:31:54,340 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:31:54,340 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:31:54,340 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:32:07,563 - detection.baseline_profiler - INFO - ================================================================================
+2026-03-14 21:32:07,566 - detection.baseline_profiler - INFO - SCENARIO IDENTIFICATION
+2026-03-14 21:32:07,566 - detection.baseline_profiler - INFO - ================================================================================
+2026-03-14 21:32:07,570 - detection.baseline_profiler - INFO - Dataset info:
+2026-03-14 21:32:07,570 - detection.baseline_profiler - INFO -   - Total rows: 15,432
+2026-03-14 21:32:07,570 - detection.baseline_profiler - INFO -   - Unique scenarios: 1
+2026-03-14 21:32:07,570 - detection.baseline_profiler - INFO - 
+2026-03-14 21:32:07,584 - detection.baseline_profiler - INFO -   [1/1] Scenario: 'benign_normal'
+2026-03-14 21:32:07,584 - detection.baseline_profiler - INFO -        Samples: 15,432
+2026-03-14 21:32:07,627 - database.db_connector - INFO - INSERT_BASELINE: Starting for 'benign_normal'
+2026-03-14 21:32:07,841 - database.db_connector - INFO - Inserting new baseline for 'benign_normal'...
+2026-03-14 21:32:07,853 - database.db_connector - INFO - ✅ INSERT returned baseline_id: 1
+2026-03-14 21:32:07,857 - detection.baseline_profiler - INFO - ✅ Registered baseline ID=1 for scenario 'benign_normal'
+2026-03-14 21:32:07,857 - detection.baseline_profiler - INFO -        → Baseline ID: 1 (type: benign)
+2026-03-14 21:32:07,857 - detection.baseline_profiler - INFO - 
+  Total baselines created: 1
+2026-03-14 21:32:07,857 - detection.baseline_profiler - INFO - ================================================================================
+
+2026-03-14 21:32:07,864 - detection.baseline_profiler - INFO - ================================================================================
+2026-03-14 21:32:07,864 - detection.baseline_profiler - INFO - BUILDING SCENARIO BASELINES
+2026-03-14 21:32:07,864 - detection.baseline_profiler - INFO - ================================================================================
+2026-03-14 21:32:07,864 - detection.baseline_profiler - INFO - Total scenarios: 1
+2026-03-14 21:32:07,864 - detection.baseline_profiler - INFO - Min samples required: 5
+2026-03-14 21:32:07,864 - detection.baseline_profiler - INFO - 
+2026-03-14 21:32:07,881 - detection.baseline_profiler - INFO -   Building baseline 1 (15,432 samples)...
+2026-03-14 21:32:08,226 - database.db_connector - INFO - ✅ Inserted 60 baseline stats for baseline_id=1
+2026-03-14 21:32:08,227 - detection.baseline_profiler - INFO -   ✅ Baseline 1: 60 features
+2026-03-14 21:32:08,227 - detection.baseline_profiler - INFO - 
+2026-03-14 21:32:08,227 - detection.baseline_profiler - INFO - ✅ Baselines built: 1/1 scenarios
+2026-03-14 21:32:08,227 - detection.baseline_profiler - INFO - ================================================================================
+
+2026-03-14 21:32:08,234 - detection.ensemble_detector - INFO - Ensemble initialized (Gatekeeper + Hunter specialization):
+2026-03-14 21:32:08,235 - detection.ensemble_detector - INFO -   Gatekeeper: ocsvm (strict, high benign recall)
+2026-03-14 21:32:08,235 - detection.ensemble_detector - INFO -   Hunter:     isolation_forest (aggressive, high attack recall)
+2026-03-14 21:32:08,235 - detection.ensemble_detector - INFO -   Suspicious → treat as: attack
+2026-03-14 21:32:08,235 - detection.ensemble_detector - INFO -   Weights: LOF=0.10, IF=0.40, OCSVM=0.50
+2026-03-14 21:32:08,264 - detection.ensemble_detector - INFO - Training ensemble on 15,432 BENIGN samples...
+2026-03-14 21:32:08,265 - detection.ensemble_detector - INFO - [1/3] Training One-Class SVM...
+2026-03-14 21:32:08,542 - detection.ensemble_detector - INFO -   ✓ OCSVM trained
+2026-03-14 21:32:08,543 - detection.ensemble_detector - INFO - [2/3] Training Local Outlier Factor...
+2026-03-14 21:32:10,711 - detection.ensemble_detector - INFO -   ✓ LOF trained
+2026-03-14 21:32:10,711 - detection.ensemble_detector - INFO - [3/3] Training Isolation Forest...
+2026-03-14 21:32:11,836 - detection.ensemble_detector - INFO -   ✓ IF trained
+2026-03-14 21:32:11,836 - detection.ensemble_detector - INFO - ✅ Ensemble training complete!
+2026-03-14 21:32:12,004 - __main__ - INFO - 
+[DATABASE STATE CHECK]
+2026-03-14 21:32:12,004 - __main__ - INFO - ────────────────────────────────────────
+2026-03-14 21:32:12,005 - __main__ - INFO -   Connected to database:    iomt_ids
+2026-03-14 21:32:12,005 - __main__ - INFO -   Connected as user:        postgres
+2026-03-14 21:32:12,006 - __main__ - INFO -   Baselines table:          1 rows
+2026-03-14 21:32:12,007 - __main__ - INFO -   Scenario_baselines table: 60 rows
+2026-03-14 21:32:12,007 - __main__ - INFO -   Existing baselines:
+2026-03-14 21:32:12,007 - __main__ - INFO -     - ID 1: benign_normal
+2026-03-14 21:32:12,008 - __main__ - INFO -   Baseline sequence:        last_value=1
+2026-03-14 21:32:12,008 - __main__ - INFO - ────────────────────────────────────────
+2026-03-14 21:32:12,009 - database.db_connector - INFO - PostgreSQL connection pool closed
+2026-03-14 21:32:12,009 - database.db_connector - INFO - Redis connection closed
+2026-03-14 21:32:12,023 - __main__ - INFO - 
+✅ [SUCCESS] Operation completed!
+2026-03-14 21:33:01,568 - __main__ - INFO - ================================================================================
+2026-03-14 21:33:01,568 - __main__ - INFO - IoMT IDS - BASELINE PROFILING SYSTEM
+2026-03-14 21:33:01,568 - __main__ - INFO - ================================================================================
+2026-03-14 21:33:01,568 - __main__ - INFO - Mode: DETECT
+2026-03-14 21:33:01,568 - __main__ - INFO - Dataset: data/processed/CICIoMT2024_processed.csv
+2026-03-14 21:33:01,568 - __main__ - INFO - Auto-reset: ON
+2026-03-14 21:33:01,568 - __main__ - INFO - Timestamp: 2026-03-14 21:33:01
+2026-03-14 21:33:08,277 - preprocessing.feature_extractor - INFO - Extracting features from 497,473 flows...
+2026-03-14 21:33:08,277 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:33:09,867 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:33:09,867 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:33:09,867 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:33:09,867 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:33:10,779 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:34:13,872 - preprocessing.feature_extractor - INFO - Extracting features from 497,434 flows...
+2026-03-14 21:34:13,873 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:34:15,228 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:34:15,228 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:34:15,228 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:34:15,228 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:34:16,115 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:35:20,291 - preprocessing.feature_extractor - INFO - Extracting features from 497,329 flows...
+2026-03-14 21:35:20,292 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:35:21,671 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:35:21,672 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:35:21,672 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:35:21,672 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:35:22,569 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:36:25,943 - preprocessing.feature_extractor - INFO - Extracting features from 497,413 flows...
+2026-03-14 21:36:25,943 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:36:27,367 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:36:27,367 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:36:27,367 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:36:27,368 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:36:28,253 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:37:32,484 - preprocessing.feature_extractor - INFO - Extracting features from 497,347 flows...
+2026-03-14 21:37:32,484 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:37:34,134 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:37:34,134 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:37:34,134 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:37:34,134 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:37:35,106 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:38:41,797 - preprocessing.feature_extractor - INFO - Extracting features from 469,026 flows...
+2026-03-14 21:38:41,797 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:38:43,090 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:38:43,090 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:38:43,090 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:38:43,090 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:38:43,947 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:39:54,323 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-03-14 21:39:54,343 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-03-14 21:39:54,348 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-03-14 21:39:54,352 - database.db_connector - INFO - PostgreSQL connection pool closed
+2026-03-14 21:39:54,352 - database.db_connector - INFO - Redis connection closed
+2026-03-14 21:39:54,443 - __main__ - INFO - 
+✅ [SUCCESS] Operation completed!
+2026-03-14 21:45:00,453 - __main__ - INFO - ================================================================================
+2026-03-14 21:45:00,453 - __main__ - INFO - IoMT IDS - BASELINE PROFILING SYSTEM
+2026-03-14 21:45:00,453 - __main__ - INFO - ================================================================================
+2026-03-14 21:45:00,454 - __main__ - INFO - Mode: DETECT
+2026-03-14 21:45:00,454 - __main__ - INFO - Dataset: data/processed/CICIoMT2024_processed.csv
+2026-03-14 21:45:00,454 - __main__ - INFO - Auto-reset: ON
+2026-03-14 21:45:00,454 - __main__ - INFO - Timestamp: 2026-03-14 21:45:00
+2026-03-14 21:45:12,189 - preprocessing.feature_extractor - INFO - Extracting features from 497,473 flows...
+2026-03-14 21:45:12,190 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:45:14,200 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:45:14,200 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:45:14,200 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:45:14,200 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:45:18,586 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:46:26,870 - __main__ - INFO - ================================================================================
+2026-03-14 21:46:26,870 - __main__ - INFO - IoMT IDS - BASELINE PROFILING SYSTEM
+2026-03-14 21:46:26,870 - __main__ - INFO - ================================================================================
+2026-03-14 21:46:26,870 - __main__ - INFO - Mode: DETECT
+2026-03-14 21:46:26,870 - __main__ - INFO - Dataset: data/processed/CICIoMT2024_processed.csv
+2026-03-14 21:46:26,870 - __main__ - INFO - Auto-reset: ON
+2026-03-14 21:46:26,870 - __main__ - INFO - Timestamp: 2026-03-14 21:46:26
+2026-03-14 21:46:35,910 - preprocessing.feature_extractor - INFO - Extracting features from 497,473 flows...
+2026-03-14 21:46:35,910 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:46:37,897 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:46:37,899 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:46:37,899 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:46:37,899 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:46:40,165 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:47:13,040 - preprocessing.feature_extractor - INFO - Extracting features from 497,434 flows...
+2026-03-14 21:47:13,040 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:47:14,642 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:47:14,642 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:47:14,642 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:47:14,642 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:47:18,265 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:48:31,951 - preprocessing.feature_extractor - INFO - Extracting features from 497,329 flows...
+2026-03-14 21:48:31,951 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:48:33,802 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:48:33,802 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:48:33,802 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:48:33,802 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:48:37,596 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:49:54,475 - preprocessing.feature_extractor - INFO - Extracting features from 497,413 flows...
+2026-03-14 21:49:54,475 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:49:56,269 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:49:56,269 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:49:56,269 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:49:56,269 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:49:59,692 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:51:00,485 - preprocessing.feature_extractor - INFO - Extracting features from 497,434 flows...
+2026-03-14 21:51:00,485 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:51:03,565 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:51:03,565 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:51:03,565 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:51:03,565 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:51:07,284 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:52:44,032 - preprocessing.feature_extractor - INFO - Extracting features from 497,347 flows...
+2026-03-14 21:52:44,033 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:52:55,200 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:52:55,200 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:52:55,204 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:52:55,204 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:53:21,363 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 21:56:23,145 - preprocessing.feature_extractor - INFO - Extracting features from 497,329 flows...
+2026-03-14 21:56:23,146 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 21:56:32,036 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 21:56:32,036 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 21:56:32,037 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 21:56:32,037 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 21:56:43,367 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 22:01:06,762 - preprocessing.feature_extractor - INFO - Extracting features from 497,413 flows...
+2026-03-14 22:01:06,762 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 22:01:09,486 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 22:01:09,487 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 22:01:09,487 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 22:01:09,487 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 22:01:13,122 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 22:05:18,745 - preprocessing.feature_extractor - INFO - Extracting features from 497,347 flows...
+2026-03-14 22:05:18,746 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 22:05:20,573 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 22:05:20,573 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 22:05:20,574 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 22:05:20,574 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 22:05:22,421 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 22:37:19,240 - __main__ - INFO - ================================================================================
+2026-03-14 22:37:19,240 - __main__ - INFO - IoMT IDS - BASELINE PROFILING SYSTEM
+2026-03-14 22:37:19,240 - __main__ - INFO - ================================================================================
+2026-03-14 22:37:19,240 - __main__ - INFO - Mode: DETECT
+2026-03-14 22:37:19,240 - __main__ - INFO - Dataset: data/processed/CICIoMT2024_processed.csv
+2026-03-14 22:37:19,240 - __main__ - INFO - Auto-reset: ON
+2026-03-14 22:37:19,241 - __main__ - INFO - Timestamp: 2026-03-14 22:37:19
+2026-03-14 22:37:31,881 - preprocessing.feature_extractor - INFO - Extracting features from 497,473 flows...
+2026-03-14 22:37:31,881 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 22:37:34,455 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 22:37:34,455 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 22:37:34,455 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 22:37:34,456 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 22:37:40,247 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 22:40:15,343 - preprocessing.feature_extractor - INFO - Extracting features from 497,434 flows...
+2026-03-14 22:40:15,343 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 22:40:18,220 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 22:40:18,221 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 22:40:18,221 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 22:40:18,221 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 22:40:26,719 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 22:44:28,406 - preprocessing.feature_extractor - INFO - Extracting features from 497,329 flows...
+2026-03-14 22:44:28,406 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 22:44:31,432 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 22:44:31,433 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 22:44:31,433 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 22:44:31,434 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 22:44:40,838 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 22:47:48,796 - preprocessing.feature_extractor - INFO - Extracting features from 497,413 flows...
+2026-03-14 22:47:48,796 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 22:47:50,383 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 22:47:50,383 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 22:47:50,383 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 22:47:50,383 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 22:47:53,940 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 22:49:03,343 - preprocessing.feature_extractor - INFO - Extracting features from 497,347 flows...
+2026-03-14 22:49:03,344 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 22:49:05,026 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 22:49:05,026 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 22:49:05,026 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 22:49:05,026 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 22:49:08,624 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 22:50:17,551 - preprocessing.feature_extractor - INFO - Extracting features from 469,026 flows...
+2026-03-14 22:50:17,552 - preprocessing.feature_extractor - INFO - Input columns: 41
+2026-03-14 22:50:19,001 - preprocessing.feature_extractor - INFO - [OK] Extracted 67 columns
+2026-03-14 22:50:19,001 - preprocessing.feature_extractor - INFO -      - 63 ML features
+2026-03-14 22:50:19,001 - preprocessing.feature_extractor - INFO -      - Metadata: timestamp, protocol, label, scenario
+2026-03-14 22:50:19,001 - preprocessing.feature_extractor - INFO -      - NO synthetic IPs/ports (removed)
+2026-03-14 22:50:22,531 - preprocessing.feature_extractor - INFO - [OK] Features normalized (detection mode - used existing scaler)
+2026-03-14 22:51:23,130 - database.db_connector - INFO - [OK] PostgreSQL connection pool created (2-10 connections)
+2026-03-14 22:51:23,162 - database.db_connector - INFO - [OK] Redis connected successfully with connection pooling
+2026-03-14 22:51:23,165 - database.db_connector - INFO - [OK] Redis cache is working properly
+2026-03-14 22:51:23,167 - database.db_connector - INFO - PostgreSQL connection pool closed
+2026-03-14 22:51:23,167 - database.db_connector - INFO - Redis connection closed
+2026-03-14 22:51:23,291 - __main__ - INFO - 
+✅ [SUCCESS] Operation completed!

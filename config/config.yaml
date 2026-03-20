@@ -1,0 +1,92 @@
+# Database Configuration
+database:
+  host: localhost
+  port: 5432
+  name: iomt_ids
+  user: postgres
+  password: angelayam
+
+
+# Redis Configuration  
+redis:
+  host: localhost
+  port: 6379
+  db: 0
+  connection_pool_size: 20
+  socket_keepalive: true
+  socket_timeout: 5
+
+# Device Profiling Configuration
+baseline_profiling:
+  use_behavioral_fingerprinting: true
+  min_samples_for_baseline: 5
+  z_score_threshold: 3.0
+  rows_per_subdevice: 100
+
+
+# Training Configuration
+training:
+  semi_supervised:
+    enabled: false
+    attack_sample_size: 100
+  
+  validate_benign:
+    enabled: true
+    check_scenario_names: true
+    max_outlier_ratio: 0.05
+
+
+algorithms:
+  isolation_forest:
+    contamination: 0.15
+    max_samples: 512
+    n_estimators: 450
+    n_jobs: 1  # ← CRITICAL: Set to 1 for reproducibility
+    random_state: 42
+    
+  lof:
+    contamination: 0.15
+    metric: manhattan
+    n_jobs: 1  # ← CRITICAL: Set to 1 for reproducibility
+    n_neighbors: 13
+    novelty: true
+  
+  ocsvm:
+    gamma: 0.01
+    kernel: rbf
+    nu: 0.01         # <--- INCREASED from 0.015 to 0.03
+                          # This forces OCSVM to be less "lazy" without being too strict.
+
+
+ensemble:
+  # BALANCED HUNTER WEIGHTS
+  # We reduce OCSVM dominance so Isolation Forest can push attack scores higher.
+  weights:
+    ocsvm: 0.50           # <--- Reduced from 0.60
+    lof: 0.10             # Kept low (noisy)
+    isolation_forest: 0.40 # <--- Increased from 0.30 (The Hunter)
+
+
+  # THE TARGET THRESHOLD
+  # With the weights above, the scores will stretch out. 
+  # 0.08 should now be the perfect cut-off.
+  threshold_low: 0.1
+  threshold_medium: 0.35
+  threshold_high: 0.6
+  threshold_critical: 0.75
+
+  specialization:
+    enabled: true
+    gatekeeper: ocsvm           # ← Add missing keys
+    hunter: isolation_forest
+    suspicious_as: attack       # ← CORRECT KEY NAME
+
+
+# Detection Configuration
+detection:
+  batch_size: 1000
+  alert_threshold: 0.6
+  cache_ttl: 300
+
+training:
+  benchmark_train_dataset: "data/processed/full_inference_cleaned_casing_preserved.csv"
